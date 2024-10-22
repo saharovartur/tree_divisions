@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if employee_list %}
+        <ul>
+            {% for employee in employee_list %}
+                <li>
+                    {{ employee.user.last_name }}
+                    {{ employee.user.first_name }}
+                    {{ employee.patronymic }}
+                    ({{ employee.department }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Список сотрудников пуст.</p>
+    {% endif %}
+{% endblock content %}
+
+
+
+
+

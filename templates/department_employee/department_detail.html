@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load mptt_tags %}
+
+{% block content %}
+    <div class="media-body">
+        <div class="article-metadata">
+            <span class="badge badge-warning">{{ department.title }}</span>
+        </div>
+        <h7 class="article-title">{{ department.description }}</h7>
+    </div>
+{% endblock content %}

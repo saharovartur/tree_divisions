@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load mptt_tags %}
+
+{% block content %}
+    <div class="card mb-4">
+        <div class="card-header">Отдел</div>
+        <div class="card-body">
+            {% full_tree_for_model department_employee.Department as departments %}
+            <ul>
+                {% recursetree departments %}
+                    <li>
+                        <a href="{% url 'department_detail' node.slug %}">{{ node.title }}</a>
+                    </li>
+
+                    {% if not node.is_leaf_node %}
+                        <ul>
+                            {{ children }}
+                        </ul>
+                    {% endif %}
+                {% endrecursetree %}
+            </ul>
+        </div>
+        <a class="btn btn-primary" href="{% url 'user_list' %}" role="button">Список сотрудников</a>
+    </div>
+{% endblock %}
