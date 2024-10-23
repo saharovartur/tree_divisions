@@ -16,7 +16,7 @@ def department_chain(request):
     return render(request, 'department_list.html')
 
 
-class DepartmentChainDetailView(DetailView):
+class DepartmentDetailView(DetailView):
     """детальная страница просмотра отдела"""
     model = Department
     template_name = 'department_detail.html'
