@@ -8,7 +8,7 @@ from .models import Employee
 def employee_list(request):
     """Список сотрудников"""
     employee_list = Employee.objects.all()
-    return render(request, 'user_list.html', {'employee_list': employee_list})
+    return render(request, 'employee_list.html', {'employee_list': employee_list})
 
 
 def department_chain(request):
